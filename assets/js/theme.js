@@ -20,6 +20,7 @@ var lngs = lngContainer[0].getElementsByClassName("lng");
 
 for (var i = 0; i < lngs.length; i++) {
   lngs[i].addEventListener("click", function() {
+
     var cur = document.getElementsByClassName("selected");
 
     if (cur.length > 0) {
@@ -35,9 +36,10 @@ for (var i = 0; i < lngs.length; i++) {
 var menu = document.getElementsByClassName("menu-items");
 var btnOpen = document.getElementsByClassName("nav-open-btn");
 var btnClose = document.getElementsByClassName("nav-close-btn");
-var body = document.getElementsByTagName("BODY")[0];
+var body = document.body;
 
 function openNav() {
+
   for (var i=0;i<menu.length;i+=1){
     menu[i].style.display = 'block';
   }
@@ -58,6 +60,40 @@ function closeNav() {
   body.style.overflow = 'visible';
 }
 
+// Scroll to top
+
+mybutton = document.getElementsByClassName("scroll-up")[0];
+footer = document.getElementsByClassName("footer")[0];
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+
+  //Stop before footer function - not working properly
+/*
+  if (mybutton.offsetTop + mybutton.height >= footer.offsetTop - 20){
+    mybutton.style.position = 'absolute';
+    mybutton.style.bottom = 20;
+  }
+      
+  if(document.body.scrollTop + mybutton.height < footer.offsetTop - 20) {
+    mybutton.style.position = 'fixed';
+    mybutton.style.bottom = '20px';
+    mybutton.style.right = '20px';
+  }
+  */
+}
+
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
 // Button functions
 
 function goToSapnotajiem(){
@@ -71,6 +107,3 @@ function goToUznemejiem(){
 function submit(){
   
 }
-
-
-
