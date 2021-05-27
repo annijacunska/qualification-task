@@ -94,6 +94,19 @@ function topFunction() {
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
+function playVideo(){
+  var video = document.getElementsByClassName("video-overlay")[0];
+  var vid = document.getElementsByClassName("video")[0];
+
+  if (video.classList.contains("closed")) {
+    video.className = video.className.replace(" closed", " show");
+    body.style.overflow = 'hidden';
+  } else {
+    video.className = video.className.replace(" show", " closed");
+    body.style.overflow = 'visible';
+  }
+}
+
 // Button functions
 
 function goToSapnotajiem(){
