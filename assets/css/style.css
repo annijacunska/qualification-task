@@ -81,6 +81,11 @@ button:active {
   font-size: 30px;
 }
 
+.scroll-up.js-sticky {
+  position: absolute;
+  bottom: 20px;
+}
+
 /* Navigation section */
 
 .container {
@@ -148,9 +153,9 @@ button:active {
   color: #060606;
 }
 
-.menu-item.active { border-bottom: 3px solid #ffa800; }
+.menu-item.js-active { border-bottom: 3px solid #ffa800; }
 
-.menu-item.active a{ font-weight: bold; }
+.menu-item.js-active a{ font-weight: bold; }
 
 .lng-select {
   background-color: white;
@@ -163,7 +168,7 @@ button:active {
   margin: 10px 16px;
 }
 
-.lng.selected { display: block; }
+.lng.js-selected { display: block; }
 
 .lng-select:hover .lng{ display: block; }
 
@@ -214,9 +219,9 @@ a.nav-close-btn {
 
   .menu-item-list li { margin: 38px 0; }
 
-  .lng.selected { border-bottom: 3px solid #ffa800; }
+  .lng.js-selected { border-bottom: 3px solid #ffa800; }
 
-  .lng.selected a{ font-weight: bold; }
+  .lng.js-selected a{ font-weight: bold; }
 
   .lng-select li {
     display: block;
@@ -585,11 +590,10 @@ a.nav-close-btn {
   content:" ";
   display:block;
   height: 45px;
-  background-image: url("../img/ripped.png");
+  background-image: url("../img/ripped-flipped-orange.png");
   position:absolute;
   bottom: 0;
   width:100%;
-  background-color: #ffcb66;
 }
 
 textarea {
@@ -777,11 +781,10 @@ button.btn-submit {
   content:" ";
   display:block;
   height: 45px;
-  background-image: url("../img/ripped.png");
+  background-image: url("../img/ripped-flipped-blue.png");
   position:absolute;
   bottom: 0;
   width:100%;
-  background-color: #2f4858;
 }
 
 body .row-bfr-footer {

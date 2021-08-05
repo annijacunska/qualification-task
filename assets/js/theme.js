@@ -4,13 +4,13 @@ var btns = btnContainer[0].getElementsByClassName("menu-item");
 
 for (var i = 0; i < btns.length; i++) {
   btns[i].addEventListener("click", function() {
-    var current = document.getElementsByClassName("active");
+    var current = document.getElementsByClassName("js-active");
 
     if (current.length > 0) {
-      current[0].className = current[0].className.replace(" active", "");
+      current[0].className = current[0].className.replace(" js-active", "");
     }
 
-    this.className += " active";
+    this.className += " js-active";
   });
 }
 
@@ -21,13 +21,13 @@ var lngs = lngContainer[0].getElementsByClassName("lng");
 for (var i = 0; i < lngs.length; i++) {
   lngs[i].addEventListener("click", function() {
 
-    var cur = document.getElementsByClassName("selected");
+    var cur = document.getElementsByClassName("js-selected");
 
     if (cur.length > 0) {
-      cur[0].className = cur[0].className.replace(" selected", "");
+      cur[0].className = cur[0].className.replace(" js-selected", "");
     }
 
-    this.className += " selected";
+    this.className += " js-selected";
     // this.parentNode.insertBefore(this, lngs[0]);
   });
 }
@@ -67,26 +67,28 @@ footer = document.getElementsByClassName("footer")[0];
 
 window.onscroll = function() {scrollFunction()};
 
+var top = mybutton.offsetTop;
+var footerTop = footer.offsetTop;
+var btnHeight = mybutton.offsetHeight;
+var maxy = footerTop - btnHeight;
+
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
+    mybutton.style.display = 'block';
 
-  //Stop before footer function - not working properly
-/*
-  if (mybutton.offsetTop + mybutton.height >= footer.offsetTop - 20){
-    mybutton.style.position = 'absolute';
-    mybutton.style.bottom = 20;
+    //Stop before footer function - not working properly
+
+    // if (top > maxy) {
+    //   if(!mybutton.classList.contains('js-sticky')) {
+    //     mybutton.classList.add('js-sticky');
+    //   }
+    // } else {
+    //   mybutton.classList.remove('js-sticky');
+    // }
+
+  } else {
+    mybutton.style.display = 'none';
   }
-      
-  if(document.body.scrollTop + mybutton.height < footer.offsetTop - 20) {
-    mybutton.style.position = 'fixed';
-    mybutton.style.bottom = '20px';
-    mybutton.style.right = '20px';
-  }
-  */
 }
 
 function topFunction() {
